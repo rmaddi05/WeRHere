@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Hobbies_Needed__c</fullName>
+    <externalId>false</externalId>
+    <label>Hobbies Needed</label>
+    <required>true</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>true</sorted>
+            <value>
+                <fullName>Arts and crafts</fullName>
+                <default>false</default>
+                <label>Arts and crafts</label>
+            </value>
+            <value>
+                <fullName>Dancing</fullName>
+                <default>false</default>
+                <label>Dancing</label>
+            </value>
+            <value>
+                <fullName>Gardening</fullName>
+                <default>false</default>
+                <label>Gardening</label>
+            </value>
+            <value>
+                <fullName>Painting</fullName>
+                <default>false</default>
+                <label>Painting</label>
+            </value>
+            <value>
+                <fullName>Reading books</fullName>
+                <default>false</default>
+                <label>Reading books</label>
+            </value>
+            <value>
+                <fullName>Singing</fullName>
+                <default>false</default>
+                <label>Singing</label>
+            </value>
+            <value>
+                <fullName>Story telling</fullName>
+                <default>false</default>
+                <label>Story telling</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>4</visibleLines>
+</CustomField>
