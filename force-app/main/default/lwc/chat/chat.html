@@ -1,0 +1,151 @@
+<template>
+    <div class="container">
+      <div class="row">
+        <!-- Sidebar Menu -->
+        <!-- <nav class="menu">
+          <ul class="items">
+            <li class="item">
+              <i class="fa fa-home" aria-hidden="true"></i>
+            </li>
+            <li class="item">
+              <i class="fa fa-user" aria-hidden="true"></i>
+            </li>
+            <li class="item">
+              <i class="fa fa-pencil" aria-hidden="true"></i>
+            </li>
+            <li class="item item-active">
+              <i class="fa fa-commenting" aria-hidden="true"></i>
+            </li>
+            <li class="item">
+              <i class="fa fa-file" aria-hidden="true"></i>
+            </li>
+            <li class="item">
+              <i class="fa fa-cog" aria-hidden="true"></i>
+            </li>
+          </ul>
+        </nav> -->
+  
+        <!-- Discussions Panel -->
+        
+  
+
+        <section class="discussions">
+          <div class="discussion search">
+            <!-- <div class="searchbar">
+              <i class="fa fa-search" aria-hidden="true"></i>
+              <input type="text" placeholder="Search..." onchange={getSearchValue}/>
+              <button onclick={searchCod} label="Search">Search</button>
+            </div> -->
+            <h1 class="name" style="font-size: 20px;">Chat With Co-Ordinators</h1>
+          </div>
+          <template for:each={data2} for:item="d2">
+            <div class="discussion" key={d2.Id} data-id={d2.Id} onclick={showMessage}>
+              <div class="desc-contact">
+                
+                <p class="name" data-id={d2.FirstName} onclick={getName}>{d2.FirstName}</p>
+                <p></p>
+              </div>
+            </div>
+          </template>
+          
+
+        </section>
+
+
+        <!-- Chat Section -->
+        
+        <!-- <section class="chat">
+          <div class="header-chat">
+            <i class="icon fa fa-user-o" aria-hidden="true"></i>
+            <p class="name">Megan Leib</p>
+            <i class="icon clickable fa fa-ellipsis-h right" aria-hidden="true"></i>
+          </div>
+          <div class="messages-chat">
+            <template for:each={messages} for:item="message">
+              <div key={message.id} class={message.class}>
+                <div class="photo" style={message.photoStyle}>
+                  <template if:true={message.online}>
+                    <div class="online"></div>
+                  </template>
+                </div>
+                <p class="text">{message.text}</p>
+                <p class="time" >{message.time}</p>
+              </div>
+              
+            </template>
+          </div>
+          <div class="footer-chat">
+            <i class="icon fa fa-smile-o clickable" aria-hidden="true"></i>
+            <input type="text" class="write-message" placeholder="Type your message here" />
+            <i class="icon send fa fa-paper-plane-o clickable" aria-hidden="true"></i>
+          </div>
+        </section> -->
+
+
+
+        <section class="chat">
+          <div class="header-chat">
+            <p class = "name" style="font-size: 30px; font-weight: bold;">{cName}</p>
+          </div>
+          <div class="messages-chat">
+            <template for:each={data} for:item="d">
+              <div key={d.id} class={d.class}>
+                <template if:true={d.User_Message__c}>
+                <p class="message text-only">{d.User_Message__c}</p>
+              </template>
+                <template if:true={d.Co_Ordinator_Message__c}>
+                <p class="message text">{d.Co_Ordinator_Message__c}</p>
+              </template>
+                
+              </div> 
+            </template>
+          </div>
+
+          <div class="footer-chat">
+            <i class="icon fa fa-smile-o clickable" aria-hidden="true"></i>
+            <input type="text" 
+            class="write-message" 
+            placeholder="Type your message here" 
+            value={msgValue} 
+            oninput={getMsgValue}
+            onkeydown={handleKeyDown}/>
+            <i class="icon send fa fa-paper-plane-o clickable" aria-hidden="true"></i>
+            <button onclick={sendMsg} label="Search">Send</button>
+          </div>
+        </section>
+
+
+
+
+
+
+          <!-- <section class="chat">
+          <div class="header-chat">
+            <i class="icon fa fa-user-o" aria-hidden="true"></i>
+            <p class="name">Megan Leib</p>
+            <i class="icon clickable fa fa-ellipsis-h right" aria-hidden="true"></i>
+          </div>
+          <div class="messages-chat">
+            <template for:each={messages} for:item="messageGroup" for:index="msgIndex">
+                <div key={messageGroup.discussionid} class="message-group">
+                    <template for:each={messageGroup.m} for:item="message">
+                        <div key={message.id} class={message.class}>
+                            <div if:true={message.photoStyle} class="photo" style={message.photoStyle}></div>
+                            <div class="text">{message.text}</div>
+                            <span class="time">{message.time}</span>
+                        </div>
+                    </template>
+                </div>
+            </template>
+          </div>
+          <div class="footer-chat">
+            <i class="icon fa fa-smile-o clickable" aria-hidden="true"></i>
+            <input type="text" class="write-message" placeholder="Type your message here" />
+            <i class="icon send fa fa-paper-plane-o clickable" aria-hidden="true"></i>
+          </div>
+        </section> -->
+
+
+      </div>
+    </div>
+  </template>
