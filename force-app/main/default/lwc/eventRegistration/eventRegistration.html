@@ -1,0 +1,53 @@
+<template>
+    <template if:true={searchBar}>
+
+        <div class="search-container" >
+            <input type="text" name="search" placeholder="Search..." class="search-input"  onkeydown={handleKeydown} >
+            <a onclick={handleSearch} href="#" class="search-btn">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                    stroke="#007bff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                    class="feather feather-search">
+                    <circle cx="11" cy="11" r="8"></circle>
+                    <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                </svg>
+            </a>
+        </div>
+    </template>
+
+    <template if:false={searchBar}>
+        <button label="Previous" onclick={handlePrevious} style="font-weight: 900;
+        height: 29px;
+        border-radius: 9px;
+    ">
+            Previous
+        </button>
+        <div if:false={isEvent}>
+            <div style="text-align: center; color: #ffff;">
+                <h1>Great !!!</h1>
+                <p>You have very interesting Hobbie !!!!!!!!{searchKey}!!!!!!!!!. </p>
+                <p>We are looking forward to add it.</p>
+                <p>For now you can browse for Panting,Singing,Dancing.</p>
+                <p>This website is in developing mode.</p>
+                <p>Thank you for your patience !!</p>
+                <h1>!! Do Visit !!</h1>
+            </div>
+        </div>
+        <div if:true={isEvent} class="container">
+            <template for:each={events} for:item="e">
+                <div class="card" key={e.Id}>
+                    <h3>{e.Name__c}</h3>
+                    <p>Date: {e.Date_Of_Event__c}</p>
+                    <p>Location: {e.Place__c}</p>
+                    <p>Hobbies Required: {e.Hobbies_Needed__c}</p>
+                    <p>Co-Ordinator: {e.Owner.FirstName}</p>
+                    <p>Number Of Participants: {e.Number_Of_Participants__c}</p>
+                    <lightning-button class="btn" label="View On GMAP" onclick={handleLocateMe}></lightning-button>
+                    <lightning-button class="btn" label="Register" data-id={e.Id}
+                        onclick={handleRegistration}></lightning-button>
+                </div>
+
+
+            </template>
+        </div>
+    </template>
+</template>

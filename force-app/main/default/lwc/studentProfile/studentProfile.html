@@ -1,0 +1,101 @@
+<template>
+    <p>{fullName}</p>
+    <section class="section about-section gray-bg">
+        <div class="container">
+            <div class="row reverse">
+                <div class="column column-left">
+                    <div class="about-text">
+                        <div class="heading_profile">
+                            <h3 class="dark-color">{fullName}</h3>
+                         <button class="update_button" onclick={edit_button}>Update</button>
+                        </div>
+                         <div class="self_intro">
+                            <label if:true={iseditform}>About</label>
+                         <input if:true={iseditform} class="edit_button_form yourself_text"  type="textAb" placeholder="Enter About Yourself"/>
+                        <p if:false={iseditform}>
+                            {abtU}
+                        </p> 
+                        </div>                      
+                        <div class="about-list">
+                            <div class="details-column">
+                                <div class="media">
+                                    <label>Birthday</label>
+                                    <input if:true={iseditform} class="edit_button_form"  type="date" placeholder="MM-DD-YYYY"/>
+                                    <p if:false={iseditform}>{bdate}</p>
+                                </div>
+                                <div class="media">
+                                    <label>Age</label>
+                                     <p>{age}</p>
+                                </div>
+                                <div class="media">
+                                    <label>Residence</label>
+                                    <input if:true={iseditform} class="edit_button_form"  type="textRs" placeholder="Enter Country"/>
+                                    <p if:false={iseditform}>{residence}</p>
+                                </div>
+                            </div>
+                            <div class="details-column">
+                                <div class="media">
+                                    <label>E-mail</label>
+                                    <input if:true={iseditform} class="edit_button_form"  type="email" placeholder="Enter Email"/>
+                                    <p if:false={iseditform}>{email}</p>
+                                </div>
+                                <div class="media">
+                                    <label>Phone</label>
+                                    <input if:true={iseditform} class="edit_button_form"  type="textPh" maxlength="12" oninput= {formatPhoneNumber} placeholder="000-000-0000"/>
+                                    <p if:false={iseditform}>{phone}</p>
+                                </div>
+                                <div class="media">
+                                    <label>Address</label>
+                                    <input if:true={iseditform} class="edit_button_form"  type="textAd" placeholder="Enter Address"/>
+                                    <p if:false={iseditform}>{add}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="column column-right">
+                    <div class="about-avatar">
+                        <img src={ST1} alt="Avatar" />
+                    </div>
+                </div>
+            </div>
+            <div class="counter">
+                <div class="row">
+                    <div class="column">
+                        <div class="count-data text-center">
+                            <template if:true={totalHours}>
+                            <h6 class="count">{totalHours}</h6>
+                        </template>
+                        <template if:false={totalHours}>
+                            <h6 class="count">0</h6>
+                        </template>
+                            <p class="count-p">Total Hours</p>
+                        </div>
+                    </div>
+                    <div class="column">
+                        <div class="count-data text-center">
+                            <template if:true={totalEvents}>
+                            <h6 class="count">{totalEvents}</h6>
+                            </template>
+                        <template if:false={totalEvents}>
+                            <h6 class="count">0</h6>
+                        </template>
+                            <p class="count-p">Number of Event</p>
+                        </div>
+                    </div>
+                    <div class="column">
+                        <div class="count-data text-center">
+                            <template if:true={totalAwards}>
+                            <h6 class="count">{totalAwards}</h6>
+                        </template>
+                        <template if:false={totalAwards}>
+                            <h6 class="count">0</h6>
+                        </template>
+                            <hp class="count-p">Awards</hp>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</template>

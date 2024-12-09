@@ -1,0 +1,29 @@
+.custom-nav {
+    background-color: #333;
+    padding: 1rem;
+  }
+  
+  .nav-list {
+    display: flex;
+    gap: 3.5rem;
+    list-style-type: none;
+    font-size: 20px;
+  }
+  
+  .nav-list li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+  }
+
+  .left-align {
+    margin-left: auto; /* Push this group to the left */
+    display: flex;
+    gap: 3.5rem;
+}
+
+.changethis{
+  /* --slds-c-icon-color-background: blue; */
+  --lwc-colorTextIconDefault: #ffff;
+  
+  } 

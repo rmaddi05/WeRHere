@@ -1,0 +1,35 @@
+<template>
+  <nav class="custom-nav">
+    <ul class="nav-list">
+      <li><a onclick={navigateToHome}>Home</a></li>
+      <li><a onclick={navigateToRegisterEvent}>Register For An Event</a></li>
+      <li><a onclick={navigateToRegisteredEvent}>Event Activity</a></li>
+
+      <li>
+        <a onclick={navigateToAboutus}>AboutUs</a>
+      </li>
+      <div class="left-align">
+
+        <li>
+          <lightning-icon icon-name="utility:app_web_messaging" alternative-text="Connected" title="medium (default)"
+            size="small" onclick={navigateToChat} class="changethis">
+            <a onclick={navigateToChat}>Chat</a>
+          </lightning-icon>
+        </li>
+        <li>
+          <lightning-icon icon-name="utility:user" alternative-text="Connected" title="medium (default)" size="small" 
+          onclick={navigateToMyProfile} class="changethis">
+            <a onclick={navigateToMyProfile}>My Profile</a>
+          </lightning-icon>
+        </li>
+        <li style="text-align: left;">
+          <lightning-icon icon-name="utility:logout" alternative-text="Connected" title="medium (default)" size="small" 
+          onclick={navigateToLogout} class="changethis">
+            <a onclick={navigateToLogout}>Log Out</a>
+          </lightning-icon>
+        </li>
+      </div>
+
+    </ul>
+  </nav>
+</template>

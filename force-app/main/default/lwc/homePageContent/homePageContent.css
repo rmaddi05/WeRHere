@@ -1,0 +1,19 @@
+.large-image {
+    width: 600px;
+    height: 400px;
+    border: 2px solid #d8dde6;
+    border-radius: 8px;
+    object-fit: cover;
+}
+
+.text-content {
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #ffff;
+    /* text-align: center; */
+    margin-top: 26px;
+}
+
+.slds-gutters_large {
+    gap: 2rem;
+}

@@ -1,0 +1,67 @@
+<template>
+  <h1>Current Registrations</h1>
+    <div class="tbl-container">
+          <div class="tbl-header" onchange={headerStyle}>
+            <table cellpadding="0" cellspacing="0" border="0">
+              <thead>
+                <tr>
+                  <th>Event Name</th>
+                  <th>Date and Time</th>
+                  <th>Place</th>
+                  <th>Co-Ordinator</th>
+                </tr>
+              </thead>
+            </table>
+          </div>
+          <div class="tbl-content" onscroll={adjustHeaderPadding}>
+            <table cellpadding="0" cellspacing="0" border="0">
+              <tbody>
+                <template for:each={data} for:item="d">
+                  <tr key={d.Id}>
+                    <td>{d.MDEvents__r.Name__c}</td>
+                    <td>{d.MDEvents__r.Date_Of_Event__c}</td>
+                    <td>{d.MDEvents__r.Place__c}</td>
+                    <td>{d.MDEvents__r.Owner.FirstName}</td>
+                  </tr>
+                </template>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <h1>Registration History</h1>
+        <div class="tbl-container">
+          <div class="tbl-header" onchange={headerStyle}>
+            <table cellpadding="0" cellspacing="0" border="0">
+              <thead>
+                <tr>
+                  <th>Event Name</th>
+                  <th>Date and Time</th>
+                  <th>Place</th>
+                  <th>Co-Ordinator</th>
+                  <th>Hours</th>
+                </tr>
+              </thead>
+            </table>
+          </div>
+          <div class="tbl-content" onscroll={adjustHeaderPadding}>
+            <table cellpadding="0" cellspacing="0" border="0">
+              <tbody>
+                <template for:each={data2} for:item="d">
+                  <tr key={d.Id}>
+                    <td>{d.MDEvents__r.Name__c}</td>
+                    <td>{d.MDEvents__r.Date_Of_Event__c}</td>
+                    <td>{d.MDEvents__r.Place__c}</td>
+                    <td>{d.MDEvents__r.Owner.FirstName}</td>
+                    <td>{d.Number_of_Hours__c}</td>
+
+                  </tr>
+                </template>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      
+
+
+</template>
